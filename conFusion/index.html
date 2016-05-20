@@ -89,7 +89,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!--  with data-toggle
                     <li><a data-toggle="modal" data-target="#loginModal"> -->
-                    <li><a onclick="loginModal()">
+                    <li><a id="loginButton">
                     <span class="glyphicon glyphicon-log-in"></span> Login</a>
                     </li>
                 </ul>
@@ -228,7 +228,7 @@
                     <a type="button" class="btn btn-warning btn-block" 
                     data-toggle="modal" data-target="#reserveModal">Reserve Table</a>  -->
                     <a type="button" class="btn btn-warning btn-block" 
-                    onclick="reserveModal()">Reserve Table</a>
+                    id="reserveButton">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -499,20 +499,21 @@
     <script>
         $(document).ready(function(){
             $("#mycarousel").carousel( { interval: 2000 } );
-                          $("#carousel-pause").click(function(){
-                $("#mycarousel").carousel('pause');
+            $("#carousel-pause").click(function(){
+                    $("#mycarousel").carousel('pause');
             });
+            // ASSIGNMENT 4 TASK 2.1
+            // reserve table modal
+            $("#reserveButton").click( function () {
+                $("#reserveModal").modal('toggle');
+            });
+
+            // ASSIGNMENT 4 TASK 3.1
+            // login modal
+            $("#loginButton").click( function () {
+                $("#loginModal").modal('toggle');
             });
         });
-    </script>
-    <!-- Scripts for modals -->
-    <script>
-        function loginModal(){
-            $("#loginModal").modal("show");
-        }
-        function reserveModal(){
-            $("#reserveModal").modal("show");
-        }
     </script>
 
 </body>
