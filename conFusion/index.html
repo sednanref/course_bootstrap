@@ -9,11 +9,17 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head 
          content must come *after* these tags -->
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="css/mystyles.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap-social.css" rel="stylesheet">  -->
+    <!-- Bootstrap Bower -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/mystyles.css" rel="stylesheet">
     <link href="css/bootstrap-social.css" rel="stylesheet">
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -81,7 +87,9 @@
                   <button type="submit" class="btn btn-info">Sign in</button>
                 </form>-->
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a data-toggle="modal" data-target="#loginModal">
+                    <!--  with data-toggle
+                    <li><a data-toggle="modal" data-target="#loginModal"> -->
+                    <li><a onclick="loginModal()">
                     <span class="glyphicon glyphicon-log-in"></span> Login</a>
                     </li>
                 </ul>
@@ -216,8 +224,11 @@
                     <a type="button" class="btn btn-warning btn-block"
                     data-toggle="tooltip" title="Or Call us at +852 12345678"
                      data-placement="bottom" href="#reserveform">Reserve Table</a> -->
+                    <!-- with data-toggle 
                     <a type="button" class="btn btn-warning btn-block" 
-                    data-toggle="modal" data-target="#reserveModal">Reserve Table</a> 
+                    data-toggle="modal" data-target="#reserveModal">Reserve Table</a>  -->
+                    <a type="button" class="btn btn-warning btn-block" 
+                    onclick="reserveModal()">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -469,10 +480,15 @@
         </div>
     </footer>
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins, without bower) -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    <script src="js/bootstrap.min.js"></script> -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
     <!-- for Tooltip-->
     <!--<script>
         $(document).ready(function(){
@@ -486,10 +502,17 @@
                           $("#carousel-pause").click(function(){
                 $("#mycarousel").carousel('pause');
             });
-                        $("#carousel-play").click(function(){
-                $("#mycarousel").carousel('cycle');
             });
         });
+    </script>
+    <!-- Scripts for modals -->
+    <script>
+        function loginModal(){
+            $("#loginModal").modal("show");
+        }
+        function reserveModal(){
+            $("#reserveModal").modal("show");
+        }
     </script>
 
 </body>
